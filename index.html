@@ -20,7 +20,7 @@
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
     --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9); --mark-bg:#101a33; --mark-fg:#ffffff; --term:#2e8b5a;
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --max:920px; --radius:14px;
+    --max:1080px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
     :root{ --bg:#070e1f; --bg-2:#0d162c; --fg:#e9eef8; --muted:#9aa8c4; --line:#1a2542;
@@ -71,7 +71,7 @@
   @media (max-width:760px){.hero img{object-position:78% 45%}}
 
   /* sections */
-  section{padding:96px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+  section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
   section h2{font-size:1.9rem;margin-bottom:28px}
   .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.74rem;color:var(--muted);opacity:.75;margin-bottom:8px;line-height:1.6}
   .sh .ps{color:var(--term)}
@@ -101,6 +101,8 @@
   .card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px}
   .card h3{font-size:1.3rem}
   .card p{margin:0;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+  .tag{font-size:.75rem;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
 
   /* skills */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
@@ -221,10 +223,12 @@
         <article class="card">
           <h3>Divvy</h3>
           <p>An iOS app that splits a restaurant bill from a photo of the receipt. I designed and built it end to end: SwiftUI, a Python backend, Stripe payments, and an AI layer where Claude Vision reads the receipt and a natural-language parser lets you say "Sarah had the pasta" and watch the bill assign itself. Built spec-first, with every feature starting as an acceptance contract I write and AI agents directed against it, while I own the architecture and every review. More than 1,500 commits since February.</p>
+          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Claude API</span><span class="tag">Claude Vision</span><span class="tag">LLM evals</span><span class="tag">Spec-driven dev</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">Stripe</span></div>
         </article>
         <article class="card">
           <h3>apt-bot</h3>
           <p>An NYC apartment-hunting bot built for my own search. It reads listing alert emails, enriches each one with public data like 311 noise complaints, HPD violations, and commute time, scores it with a formula plus Claude, and publishes a shared dashboard. Python and Supabase, running on a Raspberry Pi.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Raspberry Pi</span></div>
         </article>
       </div>
     </div>
