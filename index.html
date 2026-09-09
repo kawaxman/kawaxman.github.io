@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kent Waxman — Software Engineer</title>
-<meta name="description" content="Kent Waxman is an iOS software engineer in New York. He works on app performance for the FanDuel Sportsbook core app team.">
+<meta name="description" content="Kent Waxman is an iOS software engineer in New York. He works on app performance for the FanDuel Sportsbook team.">
 <meta property="og:title" content="Kent Waxman — Software Engineer">
 <meta property="og:description" content="iOS software engineer in New York, working on app performance at FanDuel.">
 <meta property="og:image" content="assets/hero.jpg">
@@ -18,7 +18,7 @@
 <style>
   :root{
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
-    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9); --mark-bg:#101a33; --mark-fg:#ffffff; --term:#7dd3a0;
+    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9); --mark-bg:#101a33; --mark-fg:#ffffff; --term:#2e8b5a;
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
     --max:1080px; --radius:14px;
   }
@@ -54,7 +54,7 @@
     background:linear-gradient(to top,rgba(7,14,31,.86) 0%,rgba(7,14,31,.38) 40%,rgba(7,14,31,0) 70%)}
   .hero .wrap{padding-bottom:72px;width:100%}
   .term{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.92rem;margin-bottom:18px;line-height:1.7}
-  .term .ps{color:var(--term)} .term .ps b{color:#fff;font-weight:500}
+  .term .ps{color:#7dd3a0} .term .ps b{color:#fff;font-weight:500}
   .term .cmd{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0;animation:type .9s steps(6,end) .6s forwards}
   .term .cursor{display:inline-block;width:.6em;height:1.1em;background:#fff;vertical-align:text-bottom;margin-left:2px;animation:blink 1s steps(1) infinite}
   .term .out{opacity:0;animation:appear .3s ease 1.7s forwards;letter-spacing:.02em}
@@ -73,6 +73,8 @@
   /* sections */
   section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
   section h2{font-size:1.9rem;margin-bottom:28px}
+  .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+  .sh .ps{color:var(--term)}
   .lede{font-size:1.15rem;max-width:680px;color:var(--fg)}
   .muted{color:var(--muted)}
   .grid{display:grid;gap:28px}
@@ -123,7 +125,7 @@
 <header class="hero" id="top">
   <img src="assets/hero.jpg" alt="Two surfers waiting in the lineup at dawn as a clean wave peels behind them" fetchpriority="high">
   <div class="wrap">
-    <div class="term" aria-label="Software Engineer, iOS, New York"><span class="ps">kent@nyc <b>~</b> %</span> <span class="cmd">whoami</span><span class="cursor"></span><div class="out">Software Engineer · iOS · New York</div></div>
+    <div class="term" aria-label="iOS Software Engineer, New York"><span class="ps">kent@nyc <b>~</b> %</span> <span class="cmd">whoami</span><span class="cursor"></span><div class="out">iOS Software Engineer · New York</div></div>
     <h1>Kent Waxman</h1>
     <p>I build mobile products people actually enjoy using. Currently making the FanDuel Sportsbook app fast and reliable for millions of users.</p>
     <div class="cta">
@@ -138,7 +140,7 @@
   <section id="about">
     <div class="wrap grid two">
       <div>
-        <h2>About</h2>
+        <div class="sh"><span class="ps">~ %</span> cat about.md</div><h2>About</h2>
         <p class="lede">I'm an iOS engineer who cares about the details: smooth animations, fast launches, and code a teammate can read a year later.</p>
       </div>
       <div class="muted">
@@ -151,7 +153,7 @@
 
   <section id="experience">
     <div class="wrap">
-      <h2>Experience</h2>
+      <div class="sh"><span class="ps">~ %</span> cat experience.md</div><h2>Experience</h2>
       <div class="job">
         <div class="when">Feb 2026 — Present</div>
         <div>
@@ -214,7 +216,7 @@
 
   <section id="projects">
     <div class="wrap">
-      <h2>Projects</h2>
+      <div class="sh"><span class="ps">~ %</span> ls projects/</div><h2>Projects</h2>
       <div class="grid two">
         <article class="card">
           <h3>Divvy</h3>
@@ -233,7 +235,7 @@
 
   <section id="skills">
     <div class="wrap">
-      <h2>Skills</h2>
+      <div class="sh"><span class="ps">~ %</span> cat skills.md</div><h2>Skills</h2>
       <div class="skills">
         <div><h3 style="text-transform:none;letter-spacing:.06em">iOS</h3><ul><li>Swift &amp; SwiftUI</li><li>UIKit</li><li>Combine &amp; Swift Concurrency</li><li>XCTest &amp; UI testing</li><li>React Native &amp; JavaScript</li><li>Performance profiling (Instruments, MetricKit)</li></ul></div>
         <div><h3>Backend &amp; Cloud</h3><ul><li>Firebase (Auth, Firestore, Functions)</li><li>Python</li><li>Supabase / Postgres</li><li>REST &amp; GraphQL APIs</li></ul></div>
@@ -245,7 +247,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <h2>Get in touch</h2>
+      <div class="sh"><span class="ps">~ %</span> mail kent</div><h2>Get in touch</h2>
       <p class="lede">I'm always happy to talk about iOS, app performance, AI tooling, or a good book.</p>
       <div class="contact">
         <a class="btn primary" style="color:#fff;background:var(--accent);border-color:var(--accent)" href="mailto:kawaxman@icloud.com">Email me</a>
