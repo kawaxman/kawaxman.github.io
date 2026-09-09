@@ -1,4 +1,4 @@
-# kentwaxman.life
+# kentwaxman.com
 
 Personal site. Plain HTML + CSS, no build step.
 
@@ -16,12 +16,12 @@ gh repo create kawaxman.github.io --public --source=. --push
 ```
 
 Then in the repo: Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ (root)`.
-The site goes live at https://kawaxman.github.io within a minute or two.
+The site goes live at https://kentwaxman.com within a minute or two.
 
-## Custom domain (kentwaxman.life)
+## Custom domain (kentwaxman.com)
 
-1. Add a file named `CNAME` containing `kentwaxman.life` and push it.
-2. At your DNS provider, add:
+1. `CNAME` in the repo contains `kentwaxman.com`.
+2. DNS lives in Vercel (`npx vercel dns ls kentwaxman.com`):
    - `A` records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
    - `CNAME` record for `www` → `kawaxman.github.io`
-3. In Settings → Pages, enter the custom domain and tick "Enforce HTTPS" once the certificate is issued.
+3. Pages custom domain is set and HTTPS is enforced.
