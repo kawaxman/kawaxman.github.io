@@ -11,12 +11,12 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#1c2230; --muted:#5b6474; --line:#e3e0da;
     --accent:#2f5d7c; --accent-soft:#dbe6ee; --peach:#f0c2b3;
-    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
     --max:1080px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
@@ -28,14 +28,14 @@
   body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.03em;margin:0}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
   /* nav */
   nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;
       padding:18px 24px;color:#fff;mix-blend-mode:normal;transition:background .3s,color .3s}
   nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
-  nav .brand{font-family:var(--serif);font-size:1.15rem;color:inherit;white-space:nowrap}
+  nav .brand{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.1rem;color:inherit;white-space:nowrap}
   nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
   nav ul a{color:inherit;font-size:.9rem;font-weight:500;opacity:.85}
   nav ul a:hover{opacity:1;text-decoration:none}
@@ -48,8 +48,7 @@
     background:linear-gradient(to top,rgba(10,16,28,.82) 0%,rgba(10,16,28,.35) 40%,rgba(10,16,28,0) 70%)}
   .hero .wrap{padding-bottom:72px;width:100%}
   .hero .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
-  .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.02;font-weight:300}
-  .hero h1 b{font-weight:500}
+  .hero h1{font-size:clamp(2.8rem,7.5vw,5.6rem);line-height:.98;font-weight:600}
   .hero p{max-width:560px;font-size:1.1rem;margin:20px 0 28px;opacity:.92}
   .cta{display:inline-flex;gap:12px;flex-wrap:wrap}
   .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .2s}
@@ -61,7 +60,7 @@
 
   /* sections */
   section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
-  section h2{font-size:2rem;margin-bottom:28px}
+  section h2{font-size:1.9rem;margin-bottom:28px}
   .lede{font-size:1.15rem;max-width:680px;color:var(--fg)}
   .muted{color:var(--muted)}
   .grid{display:grid;gap:28px}
@@ -113,7 +112,7 @@
   <img src="assets/hero.jpg" alt="Two surfers waiting in the lineup at dawn as a clean wave peels behind them" fetchpriority="high">
   <div class="wrap">
     <div class="eyebrow">iOS Engineer · New York</div>
-    <h1>Kent <b>Waxman</b></h1>
+    <h1>Kent Waxman</h1>
     <p>I build mobile products people actually enjoy using. Currently shipping iOS at FanDuel; previously Twitter and Cabana Health.</p>
     <div class="cta">
       <a class="btn primary" href="#experience">See my work</a>
