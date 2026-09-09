@@ -204,13 +204,14 @@
       <h2>Projects</h2>
       <div class="grid two">
         <article class="card">
-          <h3><a href="https://github.com/kawaxman/Divvy">Divvy</a></h3>
-          <p>An iOS expense-splitting app. Snap a receipt and Python Cloud Functions parse the line items so a group can divvy up the bill. Firebase Auth, a full unit and end-to-end test suite, and a scripted local quality gate that runs lint, build, and tests before every push.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">Cloud Functions</span></div>
+          <h3>Divvy</h3>
+          <p>An iOS app for splitting a restaurant bill from a photo of the receipt. AI runs through the product, not just the build. Claude Vision reads the receipt into line items, and a natural-language parser lets you say "Sarah had the pasta and we split the wine" and have the bill assign itself. A cheap model handles the common case and escalates to a stronger one only when it has to, behind a provider layer that can swap between Anthropic, Gemini, and OpenAI. Parser accuracy is tracked with an eval corpus that runs in CI.</p>
+          <p>The development process is AI-native too: Claude Code skills drive the branch-to-merge workflow, a Claude PR review bot fixes and re-tests its own findings, and Jira tickets sync automatically. Stripe payments, Firebase, SwiftUI, and a full unit and end-to-end test suite.</p>
+          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Claude API</span><span class="tag">Claude Vision</span><span class="tag">LLM evals</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">Stripe</span></div>
         </article>
         <article class="card">
           <h3>apt-bot</h3>
-          <p>An NYC apartment-hunting bot. Reads saved-search alert emails, enriches listings with public data like 311 noise complaints, HPD violations, and commute time, scores them with a deterministic formula plus Claude, and publishes a shared dashboard. Runs on a Raspberry Pi on a 15-minute timer.</p>
+          <p>An NYC apartment-hunting bot, built to solve my own apartment search. Reads saved-search alert emails, enriches listings with public data like 311 noise complaints, HPD violations, and commute time, scores them with a deterministic formula plus Claude, and publishes a shared dashboard. Runs on a Raspberry Pi on a 15-minute timer.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Raspberry Pi</span></div>
         </article>
       </div>

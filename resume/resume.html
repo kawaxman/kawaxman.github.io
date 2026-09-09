@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8"><title>Kent Waxman — Résumé</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
 <style>
-  @page{size:Letter;margin:0.5in 0.6in}
+  @page{size:Letter;margin:0.45in 0.55in}
   *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:9.4pt;line-height:1.36;color:#1c2230;-webkit-print-color-adjust:exact}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:9.2pt;line-height:1.34;color:#1c2230;-webkit-print-color-adjust:exact}
   a{color:inherit;text-decoration:none}
   header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8pt;border-bottom:1.5px solid #1c2230;margin-bottom:8pt}
   h1{font-family:"Inter Tight",Inter,sans-serif;font-size:24pt;font-weight:600;letter-spacing:-.03em;margin:0;line-height:1}
@@ -86,8 +86,8 @@
 <div class="two">
   <div>
     <h2>Projects</h2>
-    <p class="proj"><b>Divvy</b> · Expense-splitting iOS app. Receipt photos are parsed by Python Cloud Functions; Firebase Auth, full unit and end-to-end test suite, scripted quality gate. <a href="https://github.com/kawaxman/Divvy">github.com/kawaxman/Divvy</a></p>
-    <p class="proj"><b>apt-bot</b> · NYC apartment-hunting bot. Parses listing alert emails, enriches with public data (311, HPD, commute), scores with a deterministic formula plus Claude, publishes a shared dashboard. Python, Supabase, Vercel, Raspberry Pi.</p>
+    <p class="proj"><b>Divvy</b> · iOS bill-splitting app with AI at its core. Claude Vision extracts receipt line items; a natural-language parser assigns them from plain speech, using a cheap model with escalation behind a swappable Anthropic / Gemini / OpenAI layer, with an eval corpus in CI. Built with an AI-native workflow: Claude Code skills, a self-fixing PR review bot, Jira automation. Stripe, Firebase, SwiftUI.</p>
+    <p class="proj"><b>apt-bot</b> · NYC apartment-hunting bot. Parses listing emails, enriches with public data (311, HPD, commute), scores with a formula plus Claude, publishes a shared dashboard. Python, Supabase, Vercel, Raspberry Pi.</p>
     <h2>Education</h2>
     <p class="edu"><b>University of Colorado Boulder</b> · BA Computer Science, minor in Creative Technology &amp; Design · 2022</p>
   </div>
