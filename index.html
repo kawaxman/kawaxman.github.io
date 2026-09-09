@@ -18,13 +18,13 @@
 <style>
   :root{
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
-    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3;
+    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9);
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
     --max:1080px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
     :root{ --bg:#070e1f; --bg-2:#0d162c; --fg:#e9eef8; --muted:#9aa8c4; --line:#1a2542;
-           --accent:#9cc3ea; --accent-soft:#142445; --peach:#d89c8c; }
+           --accent:#9cc3ea; --accent-soft:#142445; --peach:#d89c8c; --nav-bg:rgba(7,14,31,.88); }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -37,7 +37,7 @@
   /* nav */
   nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;
       padding:18px 24px;color:#fff;mix-blend-mode:normal;transition:background .3s,color .3s}
-  nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
+  nav.solid{background:var(--nav-bg);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
   nav .brand{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.1rem;color:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
   nav .brand img{width:26px;height:26px;border-radius:7px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
   nav.solid .brand img{box-shadow:none}
