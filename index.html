@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kent Waxman — iOS Engineer</title>
+<meta name="description" content="Kent Waxman is an iOS engineer in New York building polished, well-tested mobile products. Currently at FanDuel; previously Twitter and Cabana Health.">
+<meta property="og:title" content="Kent Waxman — iOS Engineer">
+<meta property="og:description" content="iOS engineer in New York. Currently at FanDuel; previously Twitter and Cabana Health.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#1c2230; --muted:#5b6474; --line:#e3e0da;
+    --accent:#2f5d7c; --accent-soft:#dbe6ee; --peach:#f0c2b3;
+    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --max:1080px; --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0f141b; --bg-2:#161c25; --fg:#eef1f5; --muted:#9aa5b5; --line:#242c38;
+           --accent:#8fbbd9; --accent-soft:#1d2e3c; --peach:#d89c8c; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+      padding:18px 24px;color:#fff;mix-blend-mode:normal;transition:background .3s,color .3s}
+  nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
+  nav .brand{font-family:var(--serif);font-size:1.15rem;color:inherit;white-space:nowrap}
+  nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+  nav ul a{color:inherit;font-size:.9rem;font-weight:500;opacity:.85}
+  nav ul a:hover{opacity:1;text-decoration:none}
+  @media (max-width:640px){nav{padding:14px 18px} nav .brand{font-size:1rem} nav ul{gap:14px} nav ul a{font-size:.85rem} nav ul li:nth-child(n+4){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(to top,rgba(10,16,28,.82) 0%,rgba(10,16,28,.35) 40%,rgba(10,16,28,0) 70%)}
+  .hero .wrap{padding-bottom:72px;width:100%}
+  .hero .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
+  .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.02;font-weight:300}
+  .hero h1 b{font-weight:500}
+  .hero p{max-width:560px;font-size:1.1rem;margin:20px 0 28px;opacity:.92}
+  .cta{display:inline-flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .2s}
+  .btn:hover{background:rgba(255,255,255,.14);text-decoration:none}
+  .btn.primary{background:#fff;color:#1c2230;border-color:#fff}
+  .btn.primary:hover{background:var(--peach);border-color:var(--peach)}
+  .caption{position:absolute;right:20px;bottom:16px;font-size:.72rem;opacity:.6}
+
+  /* sections */
+  section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+  section h2{font-size:2rem;margin-bottom:28px}
+  .lede{font-size:1.15rem;max-width:680px;color:var(--fg)}
+  .muted{color:var(--muted)}
+  .grid{display:grid;gap:28px}
+  .grid.two{grid-template-columns:1fr 1fr}
+  @media (max-width:760px){.grid.two{grid-template-columns:1fr}}
+
+  /* experience */
+  .job{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line)}
+  .job:last-child{border-bottom:1px solid var(--line)}
+  .job .when{color:var(--muted);font-size:.9rem;padding-top:4px}
+  .job h3{font-size:1.2rem;font-family:var(--sans);font-weight:600}
+  .job .co{color:var(--accent);font-weight:500}
+  .job ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+  .job li{margin:4px 0}
+  @media (max-width:640px){.job{grid-template-columns:1fr;gap:4px}}
+
+  /* projects */
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px}
+  .card h3{font-size:1.3rem}
+  .card p{margin:0;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+  .tag{font-size:.75rem;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .skills h3{font-family:var(--sans);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px}
+  .skills ul{list-style:none;padding:0;margin:0}
+  .skills li{padding:6px 0;border-bottom:1px solid var(--line)}
+
+  /* contact */
+  .contact{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  footer{padding:36px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top">Kent Waxman</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <img src="assets/hero.jpg" alt="Two surfers waiting in the lineup at dawn as a clean wave peels behind them" fetchpriority="high">
+  <div class="wrap">
+    <div class="eyebrow">iOS Engineer · New York</div>
+    <h1>Kent <b>Waxman</b></h1>
+    <p>I build mobile products people actually enjoy using. Currently shipping iOS at FanDuel; previously Twitter and Cabana Health.</p>
+    <div class="cta">
+      <a class="btn primary" href="#experience">See my work</a>
+      <a class="btn" href="assets/Kent-Waxman-Resume.pdf">Résumé</a>
+    </div>
+  </div>
+  <div class="caption">My dad and me, waiting on a set.</div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap grid two">
+      <div>
+        <h2>About</h2>
+        <p class="lede">I'm an iOS engineer who cares about the details: smooth animations, fast launches, and code a teammate can read a year later.</p>
+      </div>
+      <div class="muted">
+        <p>Over the past few years I've shipped features to millions of users at Twitter and FanDuel, and helped a health-tech startup go from zero to its first app. I like working close to the product, pairing with design, and keeping a tight test suite so we can move quickly without breaking things.</p>
+        <p>Outside of work you'll usually find me in the water, ideally at first light with my dad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <!-- TODO: fill in dates and real bullets -->
+      <div class="job">
+        <div class="when">2024 — Present</div>
+        <div>
+          <h3>iOS Engineer <span class="co">· FanDuel</span></h3>
+          <ul>
+            <li>Build and maintain features in the FanDuel Sportsbook iOS app, used by millions of customers on game day.</li>
+            <li>Partner with product and design to ship experiments and measure their impact.</li>
+            <li>Improve app reliability and performance under heavy live-event traffic.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">2022 — 2024</div>
+        <div>
+          <h3>iOS Engineer <span class="co">· Twitter</span></h3>
+          <ul>
+            <li>Developed features in one of the largest Swift codebases in the world.</li>
+            <li>Collaborated across platform, backend, and design teams on high-visibility launches.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">2021 — 2022</div>
+        <div>
+          <h3>Software Engineer <span class="co">· Cabana Health</span></h3>
+          <ul>
+            <li>Built the company's first iOS app end to end at an early-stage health-tech startup.</li>
+            <li>Owned architecture, CI, and App Store releases.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3><a href="https://github.com/kawaxman/Divvy">Divvy</a></h3>
+          <p>An iOS expense-splitting app. Snap a receipt and Python Cloud Functions parse the line items so a group can divvy up the bill. Firebase Auth, a full unit and end-to-end test suite, and a scripted local quality gate that runs lint, build, and tests before every push.</p>
+          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">Cloud Functions</span></div>
+        </article>
+        <article class="card">
+          <h3>apt-bot</h3>
+          <p>An NYC apartment-hunting bot. Reads saved-search alert emails, enriches listings with public data like 311 noise complaints, HPD violations, and commute time, scores them with a deterministic formula plus Claude, and publishes a shared dashboard. Runs on a Raspberry Pi on a 15-minute timer.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Raspberry Pi</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>iOS</h3><ul><li>Swift &amp; SwiftUI</li><li>UIKit</li><li>Combine &amp; Swift Concurrency</li><li>XCTest &amp; UI testing</li><li>App Store release management</li></ul></div>
+        <div><h3>Backend &amp; Cloud</h3><ul><li>Firebase (Auth, Firestore, Functions)</li><li>Python</li><li>Supabase / Postgres</li><li>REST &amp; GraphQL APIs</li></ul></div>
+        <div><h3>Tooling &amp; Process</h3><ul><li>Xcode &amp; xcodebuild CI</li><li>GitHub Actions</li><li>Jira automation</li><li>Fastlane</li><li>Design partnership &amp; Figma</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p class="lede">I'm always happy to talk about iOS, mobile product work, or surf forecasts.</p>
+      <div class="contact">
+        <a class="btn primary" style="color:#fff;background:var(--accent);border-color:var(--accent)" href="mailto:kawaxman@icloud.com">Email me</a>
+        <a class="btn" style="color:var(--fg);border-color:var(--line)" href="https://github.com/kawaxman">GitHub</a>
+        <a class="btn" style="color:var(--fg);border-color:var(--line)" href="https://www.linkedin.com/in/kentwaxman">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Kent Waxman · Built with plain HTML and CSS, hosted on GitHub Pages.</div></footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const hero = document.querySelector('.hero');
+  const update = () => nav.classList.toggle('solid', window.scrollY > hero.offsetHeight - 70);
+  addEventListener('scroll', update, {passive:true}); addEventListener('resize', update); update();
+</script>
+</body>
+</html>
