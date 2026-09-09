@@ -2,9 +2,9 @@
 <html lang="en"><head><meta charset="utf-8"><title>Kent Waxman — Résumé</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
 <style>
-  @page{size:Letter;margin:0.45in 0.55in}
+  @page{size:Letter;margin:0.5in 0.6in}
   *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:9.2pt;line-height:1.34;color:#1c2230;-webkit-print-color-adjust:exact}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:9.3pt;line-height:1.36;color:#1c2230;-webkit-print-color-adjust:exact}
   a{color:inherit;text-decoration:none}
   header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8pt;border-bottom:1.5px solid #1c2230;margin-bottom:8pt}
   h1{font-family:"Inter Tight",Inter,sans-serif;font-size:24pt;font-weight:600;letter-spacing:-.03em;margin:0;line-height:1}
@@ -19,10 +19,12 @@
   .job .when{font-size:8.6pt;color:#5b6474;white-space:nowrap;padding-top:2pt}
   .job ul{grid-column:1/-1;margin:2pt 0 0;padding-left:13pt}
   .job li{margin:.8pt 0}
-  .two{display:grid;grid-template-columns:1fr 1fr;column-gap:22pt;font-size:8.8pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;column-gap:22pt;font-size:8.9pt}
   .skills{display:grid;grid-template-columns:auto 1fr;column-gap:10pt;row-gap:2pt}
   .skills b{font-weight:600;white-space:nowrap}
-  .proj{margin:0 0 4pt}
+  .proj{margin:0 0 2pt}
+  .plist{margin:0 0 6pt;padding-left:13pt}
+  .plist li{margin:1pt 0}
   .proj b{font-weight:600}
   .edu{margin:0}
 </style></head><body>
@@ -68,26 +70,21 @@
     <li>Built out the Twitter share sheet, one of the app's most-used surfaces, and shipped it to production on the Customer Journey Experience team; owned fixes and tests for Share to Instagram, Share to Snapchat, and Google Sign-On in Objective-C. One of 200 interns from 11,000+ applicants.</li>
   </ul>
 </div>
-<div class="job">
-  <h3>iOS Developer Intern <span class="co">· Cabana Health</span></h3>
-  <div class="when">Oct 2020 — Feb 2021</div>
-  <ul>
-    <li>Built signup, the Explore page, and Firebase search for a social wellness app; helped scale the Google Cloud backend and ran TestFlight betas with 500+ users.</li>
-  </ul>
-</div>
-<div class="job">
-  <h3>Application Developer <span class="co">· Loggerhead Marinelife Center</span></h3>
-  <div class="when">2016 — 2018</div>
-  <ul>
-    <li>Designed, built, and shipped the first iOS app for a sea turtle rehabilitation nonprofit in Juno Beach, FL, while in high school, working directly with marine biologists on scope. Swift, Mapbox, MongoDB, Google Analytics.</li>
-  </ul>
-</div>
-
 <div class="two">
   <div>
     <h2>Projects</h2>
-    <p class="proj"><b>Divvy</b> · iOS bill-splitting app I designed and built end to end: SwiftUI, Python backend, Stripe, and an AI layer where Claude Vision reads receipts and a natural-language parser assigns items from speech, with model escalation, a swappable provider layer, and evals in CI. Built spec-first: I write each feature's acceptance contract, direct AI agents against it, and own the architecture and every review. 1,500+ commits since Feb 2026.</p>
-    <p class="proj"><b>apt-bot</b> · NYC apartment-hunting bot. Parses listing emails, enriches with public data (311, HPD, commute), scores with a formula plus Claude, publishes a shared dashboard. Python, Supabase, Vercel, Raspberry Pi.</p>
+    <p class="proj"><b>Divvy</b> · iOS bill-splitting app, designed and built end to end</p>
+    <ul class="plist">
+      <li>Claude Vision reads the receipt; a natural-language parser assigns items from speech.</li>
+      <li>Cheap model with escalation, a swappable Anthropic / Gemini / OpenAI provider layer, and an eval corpus in CI.</li>
+      <li>Spec-first: I write each feature's acceptance contract, direct AI agents against it, and own the architecture and every review.</li>
+      <li>SwiftUI, Python, Firebase, Stripe. 1,500+ commits since Feb 2026.</li>
+    </ul>
+    <p class="proj"><b>apt-bot</b> · NYC apartment-hunting bot</p>
+    <ul class="plist">
+      <li>Parses listing alert emails, enriches with 311, HPD, and commute data, scores with a formula plus Claude.</li>
+      <li>Publishes a shared dashboard. Python, Supabase, Vercel, Raspberry Pi.</li>
+    </ul>
     <h2>Education</h2>
     <p class="edu"><b>University of Colorado Boulder</b> · BA Computer Science, minor in Creative Technology &amp; Design · 2022</p>
   </div>

@@ -8,7 +8,10 @@
 <meta property="og:title" content="Kent Waxman — Software Engineer">
 <meta property="og:description" content="iOS software engineer in New York, working on app performance at FanDuel.">
 <meta property="og:image" content="assets/hero.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#101a33">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
@@ -35,7 +38,9 @@
   nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;
       padding:18px 24px;color:#fff;mix-blend-mode:normal;transition:background .3s,color .3s}
   nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
-  nav .brand{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.1rem;color:inherit;white-space:nowrap}
+  nav .brand{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.1rem;color:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
+  nav .brand img{width:26px;height:26px;border-radius:7px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+  nav.solid .brand img{box-shadow:none}
   nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
   nav ul a{color:inherit;font-size:.9rem;font-weight:500;opacity:.85}
   nav ul a:hover{opacity:1;text-decoration:none}
@@ -98,7 +103,7 @@
 <body>
 
 <nav id="nav">
-  <a class="brand" href="#top">Kent Waxman</a>
+  <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="26" height="26">Kent Waxman</a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -244,7 +249,7 @@
   </section>
 </main>
 
-<footer><div class="wrap">© <span id="year"></span> Kent Waxman · Built with plain HTML and CSS, hosted on GitHub Pages.</div></footer>
+<footer><div class="wrap" style="display:flex;align-items:center;gap:12px"><img src="assets/logo.svg" alt="" width="22" height="22" style="border-radius:6px">© <span id="year"></span> Kent Waxman · Built with plain HTML and CSS, hosted on GitHub Pages.</div></footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
