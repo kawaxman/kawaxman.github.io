@@ -58,7 +58,7 @@
   .term .cmd{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0;animation:type .9s steps(6,end) .6s forwards}
   .term .cursor{display:inline-block;width:.6em;height:1.1em;background:#fff;vertical-align:text-bottom;margin-left:2px;animation:blink 1s steps(1) infinite}
   .term .out{opacity:0;animation:appear .3s ease 1.7s forwards;letter-spacing:.02em}
-  @keyframes type{to{width:6ch}} @keyframes blink{50%{opacity:0}} @keyframes appear{to{opacity:.92}}
+  @keyframes type{to{width:6ch}} @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}} @keyframes appear{to{opacity:.92}}
   @media (prefers-reduced-motion:reduce){.term .cmd{width:6ch;animation:none}.term .out{opacity:.92;animation:none}.term .cursor{animation:none}}
   .hero h1{font-size:clamp(2.8rem,7.5vw,5.6rem);line-height:.98;font-weight:600}
   .hero p{max-width:560px;font-size:1.1rem;margin:20px 0 28px;opacity:.92}
@@ -73,8 +73,14 @@
   /* sections */
   section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
   section h2{font-size:1.9rem;margin-bottom:28px}
-  .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+  .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem;color:var(--muted);margin-bottom:10px;line-height:1.6}
   .sh .ps{color:var(--term)}
+  .sh .cmd{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0}
+  .sh.typed .cmd{animation:typeN .8s steps(var(--n),end) forwards}
+  .sh .cursor{display:inline-block;width:.55em;height:1em;background:var(--muted);vertical-align:text-bottom;margin-left:2px;opacity:0}
+  .sh.typed .cursor{animation:blink 1s steps(1) .8s 3 backwards,fade .2s 3.8s forwards}
+  @keyframes typeN{to{width:calc(var(--n) * 1ch)}} @keyframes fade{to{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.sh .cmd{width:auto!important;animation:none!important}.sh .cursor{display:none}}
   .lede{font-size:1.15rem;max-width:680px;color:var(--fg)}
   .muted{color:var(--muted)}
   .grid{display:grid;gap:28px}
@@ -140,7 +146,7 @@
   <section id="about">
     <div class="wrap grid two">
       <div>
-        <div class="sh"><span class="ps">~ %</span> cat about.md</div><h2>About</h2>
+        <div class="sh"><span class="ps">~ %</span> <span class="cmd" style="--n:12">cat about.md</span><span class="cursor"></span></div><h2>About</h2>
         <p class="lede">I'm an iOS engineer who cares about the details: smooth animations, fast launches, and code a teammate can read a year later.</p>
       </div>
       <div class="muted">
@@ -153,7 +159,7 @@
 
   <section id="experience">
     <div class="wrap">
-      <div class="sh"><span class="ps">~ %</span> cat experience.md</div><h2>Experience</h2>
+      <div class="sh"><span class="ps">~ %</span> <span class="cmd" style="--n:17">cat experience.md</span><span class="cursor"></span></div><h2>Experience</h2>
       <div class="job">
         <div class="when">Feb 2026 — Present</div>
         <div>
@@ -216,7 +222,7 @@
 
   <section id="projects">
     <div class="wrap">
-      <div class="sh"><span class="ps">~ %</span> ls projects/</div><h2>Projects</h2>
+      <div class="sh"><span class="ps">~ %</span> <span class="cmd" style="--n:12">ls projects/</span><span class="cursor"></span></div><h2>Projects</h2>
       <div class="grid two">
         <article class="card">
           <h3>Divvy</h3>
@@ -235,7 +241,7 @@
 
   <section id="skills">
     <div class="wrap">
-      <div class="sh"><span class="ps">~ %</span> cat skills.md</div><h2>Skills</h2>
+      <div class="sh"><span class="ps">~ %</span> <span class="cmd" style="--n:13">cat skills.md</span><span class="cursor"></span></div><h2>Skills</h2>
       <div class="skills">
         <div><h3 style="text-transform:none;letter-spacing:.06em">iOS</h3><ul><li>Swift &amp; SwiftUI</li><li>UIKit</li><li>Combine &amp; Swift Concurrency</li><li>XCTest &amp; UI testing</li><li>Performance profiling (Instruments, MetricKit)</li></ul></div>
         <div><h3>Web &amp; Backend</h3><ul><li>HTML, CSS &amp; JavaScript</li><li>React &amp; React Native</li><li>Python</li><li>Firebase (Auth, Firestore, Functions)</li><li>Supabase / Postgres</li><li>REST &amp; GraphQL APIs</li></ul></div>
@@ -247,7 +253,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <div class="sh"><span class="ps">~ %</span> mail kent</div><h2>Get in touch</h2>
+      <div class="sh"><span class="ps">~ %</span> <span class="cmd" style="--n:9">mail kent</span><span class="cursor"></span></div><h2>Get in touch</h2>
       <p class="lede">I'm always happy to talk about iOS, app performance, AI tooling, or a good book.</p>
       <div class="contact">
         <a class="btn primary" style="color:#fff;background:var(--accent);border-color:var(--accent)" href="mailto:kawaxman@icloud.com">Email me</a>
@@ -266,6 +272,8 @@
   const hero = document.querySelector('.hero');
   const update = () => nav.classList.toggle('solid', window.scrollY > hero.offsetHeight - 70);
   addEventListener('scroll', update, {passive:true}); addEventListener('resize', update); update();
+  const typer = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('typed'); typer.unobserve(e.target); } }), {threshold: 1});
+  document.querySelectorAll('.sh').forEach(el => typer.observe(el));
 </script>
 </body>
 </html>
