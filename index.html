@@ -18,13 +18,13 @@
 <style>
   :root{
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
-    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9);
+    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9); --mark-bg:#101a33; --mark-fg:#ffffff; --term:#7dd3a0;
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
     --max:1080px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
     :root{ --bg:#070e1f; --bg-2:#0d162c; --fg:#e9eef8; --muted:#9aa8c4; --line:#1a2542;
-           --accent:#9cc3ea; --accent-soft:#142445; --peach:#d89c8c; --nav-bg:rgba(7,14,31,.88); }
+           --accent:#9cc3ea; --accent-soft:#142445; --peach:#d89c8c; --nav-bg:rgba(7,14,31,.88); --mark-bg:#e9eef8; --mark-fg:#101a33; --term:#7dd3a0; }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -39,8 +39,9 @@
       padding:18px 24px;color:#fff;mix-blend-mode:normal;transition:background .3s,color .3s}
   nav.solid{background:var(--nav-bg);backdrop-filter:blur(12px);color:var(--fg);border-bottom:1px solid var(--line)}
   nav .brand{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.1rem;color:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:10px}
-  nav .brand img{width:26px;height:26px;border-radius:7px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
-  nav.solid .brand img{box-shadow:none}
+  .mark rect{fill:#101a33}.mark path{fill:#fff}
+  nav.solid .mark rect{fill:var(--mark-bg)} nav.solid .mark path{fill:var(--mark-fg)}
+  footer .mark rect{fill:var(--mark-bg)} footer .mark path{fill:var(--mark-fg)}
   nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
   nav ul a{color:inherit;font-size:.9rem;font-weight:500;opacity:.85}
   nav ul a:hover{opacity:1;text-decoration:none}
@@ -52,7 +53,13 @@
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;
     background:linear-gradient(to top,rgba(7,14,31,.86) 0%,rgba(7,14,31,.38) 40%,rgba(7,14,31,0) 70%)}
   .hero .wrap{padding-bottom:72px;width:100%}
-  .hero .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
+  .term{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.92rem;margin-bottom:18px;line-height:1.7}
+  .term .ps{color:var(--term)} .term .ps b{color:#fff;font-weight:500}
+  .term .cmd{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0;animation:type .9s steps(6,end) .6s forwards}
+  .term .cursor{display:inline-block;width:.6em;height:1.1em;background:#fff;vertical-align:text-bottom;margin-left:2px;animation:blink 1s steps(1) infinite}
+  .term .out{opacity:0;animation:appear .3s ease 1.7s forwards;letter-spacing:.02em}
+  @keyframes type{to{width:6ch}} @keyframes blink{50%{opacity:0}} @keyframes appear{to{opacity:.92}}
+  @media (prefers-reduced-motion:reduce){.term .cmd{width:6ch;animation:none}.term .out{opacity:.92;animation:none}.term .cursor{animation:none}}
   .hero h1{font-size:clamp(2.8rem,7.5vw,5.6rem);line-height:.98;font-weight:600}
   .hero p{max-width:560px;font-size:1.1rem;margin:20px 0 28px;opacity:.92}
   .cta{display:inline-flex;gap:12px;flex-wrap:wrap}
@@ -103,7 +110,7 @@
 <body>
 
 <nav id="nav">
-  <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="26" height="26">Kent Waxman</a>
+  <a class="brand" href="#top"><svg class="mark " width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22"/><path d="M16.35400390625 66.0V32.533203125H22.41845703125V47.9189453125H22.82275390625L35.89501953125 32.533203125H43.28466796875L30.34716796875 47.5595703125L43.39697265625 66.0H36.09716796875L26.12451171875 51.669921875L22.41845703125 56.0498046875V66.0Z M50.87548828125 66.0 41.44189453125 32.533203125H47.95556640625L53.99755859375 57.1279296875H54.28955078125L60.73583984375 32.533203125H66.68798828125L73.08935546875 57.150390625H73.42626953125L79.42333984375 32.533203125H85.98193359375L76.52587890625 66.0H70.52880859375L63.83544921875 42.55078125H63.56591796875L56.89501953125 66.0Z"/></svg>Kent Waxman</a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -116,7 +123,7 @@
 <header class="hero" id="top">
   <img src="assets/hero.jpg" alt="Two surfers waiting in the lineup at dawn as a clean wave peels behind them" fetchpriority="high">
   <div class="wrap">
-    <div class="eyebrow">Software Engineer · iOS · New York</div>
+    <div class="term" aria-label="Software Engineer, iOS, New York"><span class="ps">kent@nyc <b>~</b> %</span> <span class="cmd">whoami</span><span class="cursor"></span><div class="out">Software Engineer · iOS · New York</div></div>
     <h1>Kent Waxman</h1>
     <p>I build mobile products people actually enjoy using. Currently making the FanDuel Sportsbook app fast and reliable for millions of users.</p>
     <div class="cta">
@@ -249,7 +256,7 @@
   </section>
 </main>
 
-<footer><div class="wrap" style="display:flex;align-items:center;gap:12px"><img src="assets/logo.svg" alt="" width="22" height="22" style="border-radius:6px">© <span id="year"></span> Kent Waxman · Built with plain HTML and CSS, hosted on GitHub Pages.</div></footer>
+<footer><div class="wrap" style="display:flex;align-items:center;gap:12px"><svg class="mark " width="22" height="22" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22"/><path d="M16.35400390625 66.0V32.533203125H22.41845703125V47.9189453125H22.82275390625L35.89501953125 32.533203125H43.28466796875L30.34716796875 47.5595703125L43.39697265625 66.0H36.09716796875L26.12451171875 51.669921875L22.41845703125 56.0498046875V66.0Z M50.87548828125 66.0 41.44189453125 32.533203125H47.95556640625L53.99755859375 57.1279296875H54.28955078125L60.73583984375 32.533203125H66.68798828125L73.08935546875 57.150390625H73.42626953125L79.42333984375 32.533203125H85.98193359375L76.52587890625 66.0H70.52880859375L63.83544921875 42.55078125H63.56591796875L56.89501953125 66.0Z"/></svg>© <span id="year"></span> Kent Waxman · Built with plain HTML and CSS, hosted on GitHub Pages.</div></footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
