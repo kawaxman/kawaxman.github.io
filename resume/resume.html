@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Kent Waxman — Résumé</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
+<style>
+  @page{size:Letter;margin:0.5in 0.6in}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:9.4pt;line-height:1.36;color:#1c2230;-webkit-print-color-adjust:exact}
+  a{color:inherit;text-decoration:none}
+  header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8pt;border-bottom:1.5px solid #1c2230;margin-bottom:8pt}
+  h1{font-family:"Inter Tight",Inter,sans-serif;font-size:24pt;font-weight:600;letter-spacing:-.03em;margin:0;line-height:1}
+  .sub{font-size:10pt;color:#5b6474;margin-top:4pt}
+  .contact{text-align:right;font-size:8.6pt;color:#5b6474;line-height:1.55}
+  h2{font-size:8.2pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2f5d7c;margin:9pt 0 4pt;padding-bottom:2pt;border-bottom:1px solid #e3e0da}
+  .summary{margin:0;font-size:9.8pt}
+  .job{display:grid;grid-template-columns:1fr auto;column-gap:12pt;margin-top:5pt}
+  .job:first-of-type{margin-top:0}
+  .job h3{font-size:10.2pt;font-weight:600;margin:0}
+  .job .co{font-weight:500;color:#2f5d7c}
+  .job .when{font-size:8.6pt;color:#5b6474;white-space:nowrap;padding-top:2pt}
+  .job ul{grid-column:1/-1;margin:2pt 0 0;padding-left:13pt}
+  .job li{margin:.8pt 0}
+  .two{display:grid;grid-template-columns:1fr 1fr;column-gap:22pt}
+  .skills{display:grid;grid-template-columns:auto 1fr;column-gap:10pt;row-gap:2pt}
+  .skills b{font-weight:600;white-space:nowrap}
+  .proj{margin:0 0 4pt}
+  .proj b{font-weight:600}
+  .edu{margin:0}
+</style></head><body>
+<header>
+  <div>
+    <h1>Kent Waxman</h1>
+    <div class="sub">Software Engineer · iOS · New York, NY</div>
+  </div>
+  <div class="contact">
+    <a href="mailto:kawaxman@icloud.com">kawaxman@icloud.com</a><br>
+    <a href="https://kawaxman.github.io">kawaxman.github.io</a><br>
+    <a href="https://linkedin.com/in/kawaxman">linkedin.com/in/kawaxman</a> · <a href="https://github.com/kawaxman">github.com/kawaxman</a>
+  </div>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">iOS engineer with four years at FanDuel, now on the Sportsbook core app team owning launch, frame rate, memory, crash rate, and build performance for one of the highest-traffic sports betting apps in the US. Built the performance benchmark pipeline used across FanDuel's platforms and set the iOS standards other teams follow. Works AI into every stage of the development cycle, from planning through code review and CI, and keeps current with new models, agents, and tooling as they ship.</p>
+
+<h2>Experience</h2>
+<div class="job">
+  <h3>Software Engineer, Sportsbook Core App <span class="co">· FanDuel</span></h3>
+  <div class="when">Feb 2026 — Present</div>
+  <ul>
+    <li>Own app performance for the FanDuel Sportsbook iOS app: launch time, frame rate, memory, crash rate, and build times, tracked at p50, p70, and p90.</li>
+    <li>Built the Sportsbook performance benchmark pipeline, a CI system that catches regressions before release and has been adopted widely across FanDuel's iOS, Android, and web teams.</li>
+    <li>Set the iOS concurrency and native performance standards followed by other engineering teams.</li>
+    <li>Led the end-to-end migration of the app's push notification and messaging SDK, coordinating integration across every platform.</li>
+    <li>Keep the app fast and stable through peak traffic events including the Super Bowl, using MetricKit, Instruments, custom telemetry, and CI performance gates.</li>
+  </ul>
+</div>
+<div class="job">
+  <h3>Software Engineer, Daily Fantasy <span class="co">· FanDuel</span></h3>
+  <div class="when">Sep 2022 — Feb 2026</div>
+  <ul>
+    <li>Shipped large native iOS features for the FanDuel Daily Fantasy app.</li>
+    <li>Led the iOS side of the app's full rebrand and helped migrate the codebase from UIKit to SwiftUI.</li>
+  </ul>
+</div>
+<div class="job">
+  <h3>iOS Engineering Intern <span class="co">· Twitter</span></h3>
+  <div class="when">Jun — Aug 2021</div>
+  <ul>
+    <li>Customer Journey Experience team. Shipped fixes and tests for Share to Instagram, Share to Snapchat, and Google Single Sign-On in Objective-C, and delivered an intern project extending the share sheet. One of 200 interns selected from 11,000+ applicants.</li>
+  </ul>
+</div>
+<div class="job">
+  <h3>iOS Developer Intern <span class="co">· Cabana Health</span></h3>
+  <div class="when">Oct 2020 — Feb 2021</div>
+  <ul>
+    <li>Built signup, the Explore page, and Firebase search for a social wellness app; helped scale the Google Cloud backend and ran TestFlight betas with 500+ users.</li>
+  </ul>
+</div>
+<div class="job">
+  <h3>Application Developer <span class="co">· Loggerhead Marinelife Center</span></h3>
+  <div class="when">2016 — 2018</div>
+  <ul>
+    <li>Designed and shipped a Swift iOS app for a sea turtle rehabilitation center in Juno Beach, FL, with Mapbox, MongoDB, and Google Analytics.</li>
+  </ul>
+</div>
+
+<div class="two">
+  <div>
+    <h2>Projects</h2>
+    <p class="proj"><b>Divvy</b> · Expense-splitting iOS app. Receipt photos are parsed by Python Cloud Functions; Firebase Auth, full unit and end-to-end test suite, scripted quality gate. <a href="https://github.com/kawaxman/Divvy">github.com/kawaxman/Divvy</a></p>
+    <p class="proj"><b>apt-bot</b> · NYC apartment-hunting bot. Parses listing alert emails, enriches with public data (311, HPD, commute), scores with a deterministic formula plus Claude, publishes a shared dashboard. Python, Supabase, Vercel, Raspberry Pi.</p>
+    <h2>Education</h2>
+    <p class="edu"><b>University of Colorado Boulder</b> · BA Computer Science, minor in Creative Technology &amp; Design · 2022</p>
+  </div>
+  <div>
+    <h2>Skills</h2>
+    <div class="skills">
+      <b>iOS</b><span>Swift, SwiftUI, UIKit, Objective-C, Swift Concurrency, Combine, XCTest</span>
+      <b>Performance</b><span>Instruments, MetricKit, custom telemetry, CI benchmark pipelines</span>
+      <b>AI</b><span>Claude API and agents, Claude Code, MCP, AI-assisted planning, review, and CI automation</span>
+      <b>Cross-platform</b><span>React Native, JavaScript</span>
+      <b>Backend</b><span>Python, Firebase, Google Cloud, Supabase / Postgres, REST &amp; GraphQL</span>
+      <b>Tooling</b><span>Xcode, xcodebuild CI, GitHub Actions, Fastlane, Jira</span>
+    </div>
+  </div>
+</div>
+</body></html>
