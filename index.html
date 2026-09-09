@@ -20,7 +20,7 @@
     --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
     --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3; --nav-bg:rgba(251,250,248,.9); --mark-bg:#101a33; --mark-fg:#ffffff; --term:#2e8b5a;
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --max:1080px; --radius:14px;
+    --max:920px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
     :root{ --bg:#070e1f; --bg-2:#0d162c; --fg:#e9eef8; --muted:#9aa8c4; --line:#1a2542;
@@ -71,9 +71,9 @@
   @media (max-width:760px){.hero img{object-position:78% 45%}}
 
   /* sections */
-  section{padding:88px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+  section{padding:96px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
   section h2{font-size:1.9rem;margin-bottom:28px}
-  .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem;color:var(--muted);margin-bottom:10px;line-height:1.6}
+  .sh{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.74rem;color:var(--muted);opacity:.75;margin-bottom:8px;line-height:1.6}
   .sh .ps{color:var(--term)}
   .sh .cmd{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0}
   .sh.typed .cmd{animation:typeN .8s steps(var(--n),end) forwards}
@@ -101,8 +101,6 @@
   .card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px}
   .card h3{font-size:1.3rem}
   .card p{margin:0;color:var(--muted)}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
-  .tag{font-size:.75rem;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
 
   /* skills */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
@@ -150,9 +148,9 @@
         <p class="lede">I'm an iOS engineer who cares about the details: smooth animations, fast launches, and code a teammate can read a year later.</p>
       </div>
       <div class="muted">
-        <p>At FanDuel I work on the Sportsbook team, where my job is making one of the busiest sports betting apps in the country launch fast, scroll smoothly, and stay up when millions of people open it at once on Super Bowl Sunday. Before that I spent three and a half years on the Daily Fantasy app, shipping features and leading its rebrand, and interned on the iOS teams at Twitter and Cabana Health.</p>
-        <p>AI is the other half of how I work, and I use it the way a lead uses a strong team. I write the spec, direct the agents against it, and own the architecture and every review, so the speed comes without giving up judgment. That runs through every stage of the job: turning ideas into written contracts before a line is written, generating and reviewing code, and automating CI and ticket workflows. I keep up with new models, agent frameworks, and tooling as they land, and I'm constantly testing what they can do so I know exactly where to trust them and where not to.</p>
-        <p>I live in New York. Outside of work I run, read, and chase whatever I'm learning next, and I get outside whenever I can: golf when there's time, and surfing when I can get to a coast. The photo above is my dad and me.</p>
+        <p>At FanDuel I work on the Sportsbook team, making one of the busiest sports betting apps in the country launch fast, scroll smoothly, and hold up when millions of people open it at once on Super Bowl Sunday. Before that I spent three and a half years on the Daily Fantasy app, and interned on the iOS teams at Twitter and Cabana Health.</p>
+        <p>AI is the other half of how I work, and I use it the way a lead uses a strong team: I write the spec, direct the agents against it, and own the architecture and every review. I keep up with new models and tooling as they land so I know exactly where to trust them and where not to.</p>
+        <p>I live in New York. Outside of work I run, read, golf, and surf when I can get to a coast. The photo above is my dad and me.</p>
       </div>
     </div>
   </section>
@@ -165,12 +163,10 @@
         <div>
           <h3>Software Engineer, Sportsbook <span class="co">· FanDuel</span></h3>
           <ul>
-            <li>Own the performance of one of the highest-traffic sports betting apps in the US: launch time, frame rate, memory, crash rate, and build times, measured at p50, p70, and p90.</li>
-            <li>Built the Sportsbook performance benchmark pipeline, a CI system that catches regressions before release. It has become a popular tool across FanDuel's iOS, Android, and web teams.</li>
-            <li>Set the iOS concurrency and native performance standards that other FanDuel teams follow.</li>
-            <li>Led the migration of the app's push notification and messaging SDK end to end, coordinating the integration across every platform.</li>
-            <li>Keep the app fast and stable through the year's biggest traffic spikes, including the Super Bowl.</li>
-            <li>Instrument and diagnose with MetricKit, Instruments, and custom telemetry, with performance gates in CI.</li>
+            <li>Own app performance for one of the highest-traffic sports betting apps in the US: launch time, frame rate, memory, crash rate, and build times at p50, p70, and p90.</li>
+            <li>Built the Sportsbook performance benchmark pipeline, a CI system that catches regressions before release and has become a popular tool across FanDuel's iOS, Android, and web teams.</li>
+            <li>Set the iOS concurrency and native performance standards other FanDuel teams follow.</li>
+            <li>Led the end-to-end migration of the app's push notification and messaging SDK across every platform, and keep the app stable through peak events like the Super Bowl.</li>
           </ul>
         </div>
       </div>
@@ -190,9 +186,8 @@
         <div>
           <h3>iOS Engineering Intern <span class="co">· Twitter</span></h3>
           <ul>
-            <li>Built out the Twitter share sheet, one of the most-used surfaces in the app, and shipped it to production over a single summer on the Customer Journey Experience team.</li>
-            <li>Owned fixes and test coverage for Share to Instagram, Share to Snapchat, and Google Sign-On in Objective-C, working in two-week sprints alongside full-time engineers.</li>
-            <li>One of 200 interns selected from more than 11,000 applicants.</li>
+            <li>Built out the Twitter share sheet, one of the most-used surfaces in the app, and shipped it to production on the Customer Journey Experience team.</li>
+            <li>Owned fixes and test coverage for Share to Instagram, Share to Snapchat, and Google Sign-On. One of 200 interns selected from more than 11,000 applicants.</li>
           </ul>
         </div>
       </div>
@@ -211,8 +206,7 @@
         <div>
           <h3>Application Developer <span class="co">· Loggerhead Marinelife Center</span></h3>
           <ul>
-            <li>Designed, built, and shipped the center's first iOS app while still in high school, giving a sea turtle rehabilitation nonprofit in Juno Beach, FL a way to reach visitors and its community.</li>
-            <li>Worked directly with marine biologists and center staff to decide what the app should do, then delivered it in Swift with Mapbox, a MongoDB backend, and Google Analytics.</li>
+            <li>Designed, built, and shipped the first iOS app for a sea turtle rehabilitation nonprofit in Juno Beach, FL, while in high school, working directly with marine biologists on what it should do.</li>
           </ul>
         </div>
       </div>
@@ -226,14 +220,11 @@
       <div class="grid two">
         <article class="card">
           <h3>Divvy</h3>
-          <p>An iOS app that splits a restaurant bill from a photo of the receipt. I designed and built the whole thing: the SwiftUI app, the Python backend, Stripe payments, and the AI layer, where Claude Vision reads the receipt and a natural-language parser lets you say "Sarah had the pasta" and watch the bill assign itself. The parser escalates from a cheap model to a stronger one only when needed, sits behind a provider layer I built to swap between Anthropic, Gemini, and OpenAI, and is scored against an eval corpus on every CI run.</p>
-          <p>I built it spec-first. Every feature starts with an acceptance contract I write, and I direct AI agents against that contract while owning the architecture, reviewing every change, and holding the line on quality with a full test suite and seventeen written engineering standards. The result is more than 1,500 commits since February, and every one of them went through me.</p>
-          <div class="tags"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Claude API</span><span class="tag">Claude Vision</span><span class="tag">LLM evals</span><span class="tag">Spec-driven dev</span><span class="tag">Agent loops</span><span class="tag">Firebase</span><span class="tag">Python</span><span class="tag">Stripe</span></div>
+          <p>An iOS app that splits a restaurant bill from a photo of the receipt. I designed and built it end to end: SwiftUI, a Python backend, Stripe payments, and an AI layer where Claude Vision reads the receipt and a natural-language parser lets you say "Sarah had the pasta" and watch the bill assign itself. Built spec-first, with every feature starting as an acceptance contract I write and AI agents directed against it, while I own the architecture and every review. More than 1,500 commits since February.</p>
         </article>
         <article class="card">
           <h3>apt-bot</h3>
-          <p>An NYC apartment-hunting bot, built to solve my own apartment search. Reads saved-search alert emails, enriches listings with public data like 311 noise complaints, HPD violations, and commute time, scores them with a deterministic formula plus Claude, and publishes a shared dashboard. Runs on a Raspberry Pi on a 15-minute timer.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Raspberry Pi</span></div>
+          <p>An NYC apartment-hunting bot built for my own search. It reads listing alert emails, enriches each one with public data like 311 noise complaints, HPD violations, and commute time, scores it with a formula plus Claude, and publishes a shared dashboard. Python and Supabase, running on a Raspberry Pi.</p>
         </article>
       </div>
     </div>
