@@ -14,14 +14,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#1c2230; --muted:#5b6474; --line:#e3e0da;
-    --accent:#2f5d7c; --accent-soft:#dbe6ee; --peach:#f0c2b3;
+    --bg:#fbfaf8; --bg-2:#f1efeb; --fg:#101a33; --muted:#546080; --line:#e3e0da;
+    --accent:#1f3a63; --accent-soft:#dce5f1; --peach:#f0c2b3;
     --display:"Inter Tight","Inter",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
     --max:1080px; --radius:14px;
   }
   @media (prefers-color-scheme:dark){
-    :root{ --bg:#0f141b; --bg-2:#161c25; --fg:#eef1f5; --muted:#9aa5b5; --line:#242c38;
-           --accent:#8fbbd9; --accent-soft:#1d2e3c; --peach:#d89c8c; }
+    :root{ --bg:#070e1f; --bg-2:#0d162c; --fg:#e9eef8; --muted:#9aa8c4; --line:#1a2542;
+           --accent:#9cc3ea; --accent-soft:#142445; --peach:#d89c8c; }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -45,7 +45,7 @@
   .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden}
   .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;
-    background:linear-gradient(to top,rgba(10,16,28,.82) 0%,rgba(10,16,28,.35) 40%,rgba(10,16,28,0) 70%)}
+    background:linear-gradient(to top,rgba(7,14,31,.86) 0%,rgba(7,14,31,.38) 40%,rgba(7,14,31,0) 70%)}
   .hero .wrap{padding-bottom:72px;width:100%}
   .hero .eyebrow{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
   .hero h1{font-size:clamp(2.8rem,7.5vw,5.6rem);line-height:.98;font-weight:600}
@@ -53,7 +53,7 @@
   .cta{display:inline-flex;gap:12px;flex-wrap:wrap}
   .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid rgba(255,255,255,.55);color:#fff;transition:background .2s}
   .btn:hover{background:rgba(255,255,255,.14);text-decoration:none}
-  .btn.primary{background:#fff;color:#1c2230;border-color:#fff}
+  .btn.primary{background:#fff;color:#101a33;border-color:#fff}
   .btn.primary:hover{background:var(--peach);border-color:var(--peach)}
   .caption{position:absolute;right:20px;bottom:16px;font-size:.72rem;opacity:.6}
   @media (max-width:760px){.hero img{object-position:78% 45%}}
@@ -143,7 +143,7 @@
       <div class="job">
         <div class="when">Feb 2026 — Present</div>
         <div>
-          <h3>Software Engineer, Sportsbook Core App <span class="co">· FanDuel</span></h3>
+          <h3>Software Engineer, Sportsbook <span class="co">· FanDuel</span></h3>
           <ul>
             <li>Own the performance of one of the highest-traffic sports betting apps in the US: launch time, frame rate, memory, crash rate, and build times, measured at p50, p70, and p90.</li>
             <li>Built the Sportsbook performance benchmark pipeline, a CI system that catches regressions before release. It has become a popular tool across FanDuel's iOS, Android, and web teams.</li>
